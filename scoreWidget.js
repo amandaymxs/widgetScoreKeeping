@@ -7,7 +7,7 @@ const p2AddPoint = document.querySelector("#p1AddPoint");
 const winningScore = document.querySelector("#winningScore");
 
 winningScore.addEventListener('click', function () {
-    for (let i = 5; i <= 12; i++) {
+    for (let i = 6; i <= 12; i++) {
         let newOption = document.createElement('option');
         newOption.innerText = `${i}`;
         newOption.innerValue = i;

@@ -1,5 +1,5 @@
 body{
-    display: flex;
+    display: block flex;
     justify-content: center;
     align-content: center;
 }
@@ -10,10 +10,14 @@ h2{
     text-align: center;
 }
 
-.buttonsDivider{
-    justify-content: center;
-}
-
 h3{
     display: inline;
+}
+
+.winningScore{
+    margin: 1.5em 1em;
+}
+
+.container{
+    text-align: center;
 }
