@@ -1,0 +1,19 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+h2{
+    font-size: 2em;
+    font-weight: 800;
+    text-align: center;
+}
+
+.buttonsDivider{
+    justify-content: center;
+}
+
+h3{
+    display: inline;
+}
