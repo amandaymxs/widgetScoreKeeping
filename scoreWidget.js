@@ -6,7 +6,9 @@ const winningScore = document.querySelector("#winningScore");
 
 
 //////////////////////////////////////////////////////////////
-winningScore.addEventListener('click', function () {
+
+// winningScore.addEventListener('load', function () {
+window.addEventListener("load", function () {
     let docFragment = document.createDocumentFragment();
     for (let i = 6; i <= 12; i++) {
         let newOption = document.createElement('option');
@@ -17,14 +19,14 @@ winningScore.addEventListener('click', function () {
     winningScore.appendChild(docFragment);
 }, { once: true });
 
+
+
 /////////////////////////////////////////////////////////////
 
 p1AddPoint.addEventListener('click', function () {
     if (parseInt(p1Score.innerText) < parseInt(winningScore.innerText)) {
         p1Score.innerText = parseInt(p1Score.innerText) + 1;
     }
-    console.log(winningScore.innerText);
-    console.dir(winningScore.innerHTML);
 });
 
 p2AddPoint.addEventListener('click', function () {
