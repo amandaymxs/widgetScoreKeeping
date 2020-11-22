@@ -3,8 +3,7 @@ let p2Score = document.querySelector("#p2Score");
 const p1AddPoint = document.querySelector("#p1AddPoint");
 const p2AddPoint = document.querySelector("#p2AddPoint");
 const winningScore = document.querySelector("#winningScore");
-const addPointButtons = document.querySelector("addPoint");
-
+const resetButton = document.querySelector(".resetButton");
 //////////////////////////////////////////////////////////////
 
 // winningScore.addEventListener('load', function () {
@@ -47,8 +46,25 @@ p2AddPoint.addEventListener('click', function () {
     }
 });
 
+console.dir(resetButton);
+resetButton.addEventListener('click', function () {
+    p1Score.innerText = "0";
+    p2Score.innerText = "0";
+    if (p1AddPoint.disabled == true) {
+        toggle(p1AddPoint);
+        toggle(p2AddPoint);
+    }
+})
 //////////////////////////////////////////////////////////////////
 
 function toggle(button) {
-    button.disabled = "OFF";
+    switch (button.disabled) {
+        case true:
+            button.disabled = false;
+            break;
+        case false:
+            button.disabled = true;
+            break;
+    }
+
 }
