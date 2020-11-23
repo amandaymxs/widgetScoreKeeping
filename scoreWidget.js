@@ -41,11 +41,10 @@ p2.button.addEventListener('click', function () {
 resetButton.addEventListener('click', reset);
 
 function updateScore(player, opponent) {
-    let winnningScoreValue = parseInt(winningScore.value);
-    if (parseInt(player.score.innerText) < winnningScoreValue) {
+    setWinningScore(player, opponent);
+    if (player.score.innerText < getWinningScore()) {
         player.score.innerText = parseInt(player.score.innerText) + 1;
-        if (player.score.innerText == winnningScoreValue) {
-            //add function to disable buttons - toggle
+        if (player.score.innerText >= getWinningScore()) {
             player.score.classList.add("has-text-success");
             opponent.score.classList.add("has-text-danger");
             isGameOver(player);
@@ -65,12 +64,17 @@ function reset() {
 };
 
 function isGameOver(button) {
-    switch (button.disabled) {
-        case true:
-            button.disabled = false;
-            break;
-        case false:
-            button.disabled = true;
-            break;
-    }
+    button.disabled = !button.disabled;
 };
+
+function setWinningScore(player, opponent) {
+    let greaterScore = Math.max(parseInt(player.score.innerText), parseInt(opponent.score.innerText));
+    let leastScore = Math.min(parseInt(player.score.innerText), parseInt(opponent.score.innerText));
+    if (Math.abs(greaterScore - leastScore) <= 1 && greaterScore == -1 + parseInt(winningScore.value)) {
+        winningScore.value = leastScore + 2;
+    }
+}
+
+function getWinningScore() {
+    return winningScore.value;
+}
