@@ -1,7 +1,7 @@
-let p1Score = document.querySelector("#p1Score");
-let p2Score = document.querySelector("#p2Score");
-const p1AddPoint = document.querySelector("#p1AddPoint");
-const p2AddPoint = document.querySelector("#p2AddPoint");
+let p1Score = document.querySelector(".p1Score");
+let p2Score = document.querySelector(".p2Score");
+const p1AddPoint = document.querySelector(".p1AddPoint");
+const p2AddPoint = document.querySelector(".p2AddPoint");
 const winningScore = document.querySelector("#winningScore");
 const resetButton = document.querySelector(".resetButton");
 
@@ -30,6 +30,8 @@ p1AddPoint.addEventListener('click', function () {
         p1Score.innerText = parseInt(p1Score.innerText) + 1;
         if (p1Score.innerText == winnningScoreValue) {
             //add function to disable buttons - toggle
+            p1Score.classList.add("has-text-success");
+            p2Score.classList.add("has-text-danger");
             isGameOver(p1AddPoint);
             isGameOver(p2AddPoint);
         }
@@ -41,6 +43,8 @@ p2AddPoint.addEventListener('click', function () {
     if (parseInt(p2Score.innerText) < parseInt(winnningScoreValue)) {
         p2Score.innerText = parseInt(p2Score.innerText) + 1;
         if (p2Score.innerText == winnningScoreValue) {
+            p1Score.classList.add("has-text-danger");
+            p2Score.classList.add("has-text-success");
             isGameOver(p1AddPoint);
             isGameOver(p2AddPoint);
         }
@@ -58,6 +62,9 @@ function reset() {
         isGameOver(p1AddPoint);
         isGameOver(p2AddPoint);
     }
+    p1Score.classList.remove("has-text-success", "has-text-danger");
+    p2Score.classList.remove("has-text-success", "has-text-danger");
+
 };
 
 function isGameOver(button) {

@@ -11,14 +11,19 @@
 </head>
 
 <body>
-    <!--/////////////////////BULMA START//////////////////////////////-->
-    <div class="container">
+    <div class="container mt-6">
         <div class="columns">
             <div class="column is-half is-offset-one-quarter">
                 <div class="card">
+                    <div class="card-image">
+                        <figure class="image is-2by1">
+                            <img src="https://images.unsplash.com/photo-1537963447914-dbc04b81de27?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"
+                                alt="">
+                        </figure>
+                    </div>
                     <header class="card-header">
                         <p class="card-header-title">
-                            Component
+                            Game Score Keeper
                         </p>
                         <a href="#" class="card-header-icon" aria-label="more options">
                             <span class="icon">
@@ -28,44 +33,33 @@
                     </header>
                     <div class="card-content">
                         <div class="content">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
-                            <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
-                            <br>
-                            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                            <h2 class="title is-1"><span class="scoreDisplay p1Score">0</span> to <span
+                                    class="scoreDisplay p2Score">0</span></h2>
+                            <p>Use the buttons below to keep score.</p>
+                            <label for="winningScore">
+                                <h3 class="label is-medium is-inline">Select winning Score: </h3>
+                            </label>
+                            <div class="select is-rounded">
+                                <select name="winningScore" id="winningScore">
+                                    <option value="5" default>5</option>
+                                </select>
+
+                            </div>
                         </div>
                     </div>
                     <footer class="card-footer">
-                        <a href="#" class="card-footer-item">Save</a>
-                        <a href="#" class="card-footer-item">Edit</a>
-                        <a href="#" class="card-footer-item">Delete</a>
+                        <button class="is-primary button card-footer-item addPoint is-large p1AddPoint">+1 Player
+                            One</button>
+                        <button class="is-info button card-footer-item addPoint is-large p2AddPoint">+1 Player
+                            Two</button>
+                        <button type="reset"
+                            class="is-warning button is-info card-footer-item is-large resetButton">Reset</button>
+
                     </footer>
                 </div>
             </div>
         </div>
     </div>
-
-    <!--///////////////////////BULMA END/////////////////////////////////-->
-
-    <div class="container">
-        <label for="winningScore">
-            <h3>Select winning Score: </h3>
-        </label>
-        <select name="winningScore" id="winningScore">
-            <option value="5" default>5</option>
-        </select>
-    </div>
-
-
-    <div class="container">
-        <h2><span class="scoreDisplay" id="p1Score">0</span> to <span class="scoreDisplay" id="p2Score">0</span></h2>
-        <div class="buttonsDivider">
-            <button class="addPoint" id="p1AddPoint">+1 Player One</button>
-            <button class="addPoint" id="p2AddPoint">+1 Player Two</button>
-            <button type="reset" class="resetButton">Reset</button>
-        </div>
-    </div>
-
-
 
 
     <script src="scoreWidget.js"></script>
